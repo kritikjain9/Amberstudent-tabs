@@ -2,29 +2,39 @@ body {
   padding: 0;
   margin: 0;
   font-family: BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #fafafa;
 }
 
 .App {
   text-align: center;
 }
 
-.util--center {
+
+
+/* Utitlity Classes */
+.util__center {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.nav--bar {
+.util__font {
+  font-weight: 500;
+}
+
+
+
+/* Navbar Styles */
+.nav__bar {
   display: flex;
   justify-content: space-around;
   align-items: center;
   gap: 2rem;
   height: 3rem;
-  background-color: peachpuff;
 }
 
-.nav--el {
+.nav__item {
   text-decoration: none;
   font-weight: 600;
   color: #f06673;
@@ -35,3 +45,9 @@ body {
   border-bottom: 2px solid #e8415d;
 }
 
+
+
+/* Misc Styles */
+.heading {
+  font-weight: 500;
+}

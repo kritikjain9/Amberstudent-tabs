@@ -1,10 +1,12 @@
+// Imports:
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import ReactLoading from 'react-loading';
 
-const TabDetails = () => {
 
+// Exports:
+export const TabDetails = () => {
     const [loading, setIsLoading] = useState(true);
     const [cityData, setCityData] = useState([]);
 
@@ -30,34 +32,30 @@ const TabDetails = () => {
     }, [id])
 
     const elements = cityData.map(place => {
-        return <ul key={place.name}>
+        return <ul cursor={"pointer"} key={place.name}>
             {place.name}
         </ul>
     })
 
 
     return (
-        <div className="util--center">
+        <div className="util__center">
             {loading ? <>
                 <ReactLoading type='balls' color={"#f06673"} />
-                {/* <h4>Loading</h4> */}
             </>
-                : <>
+                :
+                <>
                     {
                         cityData.length === 0 ? (
-                            <h3>No housings available at the moment :)</h3>
+                            <h3 className='util__font'>No housings available at the moment :)</h3>
                         ) : (
                             <>
-                                    <h3>Housings available at {id}</h3>
                                 {elements}
                             </>
                         )
                     }
                 </>
-
             }
         </div>
     )
 }
-
-export default TabDetails
