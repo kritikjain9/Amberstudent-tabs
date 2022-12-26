@@ -1,23 +1,22 @@
 import { useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Home from './components/Home';
 import Navbar from './components/Navbar';
 import TabDetails from './components/TabDetails';
 
 function App() {
 
-  const [selectedTab, setSelectedTab] = useState("London");
+  const defaultCity = "London"; 
 
   return (
     <div className="main">
       <nav className='nav--bar'>
-        <Navbar selectedTab={selectedTab} />
+        <Navbar />
       </nav>
-      <section>
+      <section util--center>
         <Routes>
-          <Route path='/' element={<Home />}></Route>
-          <Route path="/:id" element={<TabDetails selectedTab={selectedTab} />}></Route>
+          <Route path="/" element={<Navigate to={`/${defaultCity}`} replace />} />
+          <Route path="/:id" element={<TabDetails />}></Route>
         </Routes>
       </section>
     </div>

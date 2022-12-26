@@ -1,20 +1,23 @@
 import React from 'react'
-import { NavLink, Link, useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 
-const countries = ["London", "Bristol", "Liverpool", "Manchester", "Birmingham", "Brentford", "Sheffield"];
+const cities = ["London", "Bristol", "Liverpool", "Manchester", "Birmingham", "Brentford", "Sheffield"];
 const Navbar = () => {
 
-    const {id} = useParams();
+    const { id } = useParams();
 
-
-    const countriesTabs = countries.map(country => {
-        return <NavLink key={country} name={country} to={`/${country}`}>{country}</NavLink>
+    const citiesTabs = cities.map(city => {
+        return (
+            <div >
+                <NavLink className={`nav--el ${city === id ? "active" : ""}`} key={city} to={`/${city}`}>{city}</NavLink>
+            </div>
+        )
     })
 
     return (
         <div>
-            <nav className="navEl">
-                {countriesTabs}
+            <nav className="nav--bar">
+                {citiesTabs}
             </nav>
         </div>
     )
