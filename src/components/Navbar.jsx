@@ -2,8 +2,7 @@
 import React from 'react'
 import { NavLink, useParams } from 'react-router-dom';
 
-
-
+// Array of ciities that will be present in the tabs
 const cities = ["London", "Bristol", "Liverpool", "Manchester", "Birmingham", "Brentford", "Sheffield"];
 
 // Exports:
